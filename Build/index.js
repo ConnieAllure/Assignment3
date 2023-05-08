@@ -66,13 +66,6 @@ const updatePaginationDiv = (currentPage, numPages) => {
   });
   }
 
-  const displayPokemonCount = (currentPage, PAGE_SIZE, numPokemon) => {
-    const start = (currentPage - 1) * PAGE_SIZE + 1;
-    const end = Math.min(start + PAGE_SIZE - 1, numPokemon);
-    $('#pokemonCount').html(`Displaying Pokemon ${start}-${end} out of ${numPokemon}`);
-  };
-  
-
   $('body').on('click', ".numberedButtons", async function (e) {
     currentPage = Number(e.target.value)
     paginate(currentPage, PAGE_SIZE, pokemons)
@@ -84,6 +77,16 @@ const updatePaginationDiv = (currentPage, numPages) => {
 
 const paginate = async (currentPage, PAGE_SIZE, pokemons) => {
   selected_pokemons = pokemons.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE)
+
+  $('#Displaylist').empty()
+    var displayNum1 = currentPage * PAGE_SIZE - 9;
+    var displayNum2 = currentPage * PAGE_SIZE;
+
+    $('#Displaylist').append(`
+      <div class="Display">
+        <h1>Displaying Pokemon #${displayNum1} to #${displayNum2}</h1>
+        </div>  
+    `)
 
   $('#pokeCards').empty()
   selected_pokemons.forEach(async (pokemon) => {
