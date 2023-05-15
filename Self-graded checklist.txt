@@ -6,8 +6,8 @@
 
 [x] Pagination - Highlight the current page's button and
 [x] Pagination - Hide the next and previous buttons when there is no next or previous page
-[] Pagination - Display total number of Pokémons and the number of Pokémon being displayed
-[] Filtration - Fetch the Pokémon types from the API and display them in a checkbox group
+[x] Pagination - Display total number of Pokémons and the number of Pokémon being displayed
+[x] Filtration - Fetch the Pokémon types from the API and display them in a checkbox group
 [] Filter the Pokémon cards based on the selected types
 
 
